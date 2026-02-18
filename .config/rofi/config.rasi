@@ -1,0 +1,22 @@
+configuration {
+	modi: "drun,window,combi";
+	show-icons: true;
+	icon-theme: "Nordzy";
+
+	window-match-fields: "class,name";
+	drun-match-fields: "name,categories,keywords";
+
+	drun-display-format: "{icon} {name}";
+	window-format: "{c} {t:0}";
+
+	/*---------- Display setting ----------*/
+    display-combi: " 🖥️  All ";
+    display-window: " 🪟  Window"; 
+    display-drun: " 🏃  Run ";
+	sidebar-mode: true;
+
+	/*---------- Misc setting ----------*/
+	terminal: "kitty";
+	font: "Lilex 14";
+}
+@theme "~/.config/rofi/colors/rose.rasi"
