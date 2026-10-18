@@ -31,7 +31,10 @@ hl.monitor({
 hl.on("hyprland.start", function()
     hl.exec_cmd("quickshell")                              -- the bar and notifications
     hl.exec_cmd("swaybg --image " .. wallpaper .. " --mode fill")
-    hl.exec_cmd("hypridle")                                -- locks and blanks the screen when idle
+    -- A live session has no personal password to unlock with.
+    if os.getenv("LUMINOS_LIVE") ~= "1" then
+        hl.exec_cmd("hypridle")                            -- locks and blanks the screen when idle
+    end
     hl.exec_cmd("systemctl --user start hyprpolkitagent")  -- asks for passwords when apps need them
     hl.exec_cmd("nm-applet --indicator")                   -- Wi-Fi, in the bar's tray
     hl.exec_cmd("blueman-applet")                          -- Bluetooth, in the bar's tray
