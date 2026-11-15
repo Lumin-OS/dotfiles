@@ -286,7 +286,7 @@ ShellRoot {
                     // Critical ones stay until clicked; the rest go after
                     // their own timeout, or 5 seconds.
                     Timer {
-                        running: popup.modelData.urgency !== NotificationUrgency.Critical
+                        running: popup.modelData.urgency !== NotificationUrgency.Critical && popup.modelData.expireTimeout !== 0
                         interval: (popup.modelData.expireTimeout > 0 ? popup.modelData.expireTimeout : 5) * 1000
                         onTriggered: popup.modelData.expire()
                     }
